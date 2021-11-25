@@ -17,5 +17,5 @@ if [ ! -d lib/mongorpc ]; then
     mkdir lib/mongorpc
 fi
 
-protoc --proto_path=proto --dart_out=grpc:lib/mongorpc \
+protoc --proto_path=proto --dart_out=grpc:lib \
     proto/mongorpc/*.proto
