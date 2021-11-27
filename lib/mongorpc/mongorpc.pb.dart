@@ -9,13 +9,13 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'value.pb.dart' as $1;
+import 'value.pb.dart' as $0;
 
 class GetDocumentRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$1.ObjectId>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentId', subBuilder: $1.ObjectId.create)
+    ..aOM<$0.ObjectId>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentId', subBuilder: $0.ObjectId.create)
     ..hasRequiredFields = false
   ;
 
@@ -23,7 +23,7 @@ class GetDocumentRequest extends $pb.GeneratedMessage {
   factory GetDocumentRequest({
     $core.String? database,
     $core.String? collection,
-    $1.ObjectId? documentId,
+    $0.ObjectId? documentId,
   }) {
     final _result = create();
     if (database != null) {
@@ -77,22 +77,22 @@ class GetDocumentRequest extends $pb.GeneratedMessage {
   void clearCollection() => clearField(2);
 
   @$pb.TagNumber(3)
-  $1.ObjectId get documentId => $_getN(2);
+  $0.ObjectId get documentId => $_getN(2);
   @$pb.TagNumber(3)
-  set documentId($1.ObjectId v) { setField(3, v); }
+  set documentId($0.ObjectId v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDocumentId() => $_has(2);
   @$pb.TagNumber(3)
   void clearDocumentId() => clearField(3);
   @$pb.TagNumber(3)
-  $1.ObjectId ensureDocumentId() => $_ensure(2);
+  $0.ObjectId ensureDocumentId() => $_ensure(2);
 }
 
 class InsertDocumentRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InsertDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$1.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $1.Value.create)
+    ..aOM<$0.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $0.Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -100,7 +100,7 @@ class InsertDocumentRequest extends $pb.GeneratedMessage {
   factory InsertDocumentRequest({
     $core.String? database,
     $core.String? collection,
-    $1.Value? document,
+    $0.Value? document,
   }) {
     final _result = create();
     if (database != null) {
@@ -154,22 +154,22 @@ class InsertDocumentRequest extends $pb.GeneratedMessage {
   void clearCollection() => clearField(2);
 
   @$pb.TagNumber(3)
-  $1.Value get document => $_getN(2);
+  $0.Value get document => $_getN(2);
   @$pb.TagNumber(3)
-  set document($1.Value v) { setField(3, v); }
+  set document($0.Value v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDocument() => $_has(2);
   @$pb.TagNumber(3)
   void clearDocument() => clearField(3);
   @$pb.TagNumber(3)
-  $1.Value ensureDocument() => $_ensure(2);
+  $0.Value ensureDocument() => $_ensure(2);
 }
 
 class DeleteDocumentRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$1.ObjectId>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentId', subBuilder: $1.ObjectId.create)
+    ..aOM<$0.ObjectId>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentId', subBuilder: $0.ObjectId.create)
     ..hasRequiredFields = false
   ;
 
@@ -177,7 +177,7 @@ class DeleteDocumentRequest extends $pb.GeneratedMessage {
   factory DeleteDocumentRequest({
     $core.String? database,
     $core.String? collection,
-    $1.ObjectId? documentId,
+    $0.ObjectId? documentId,
   }) {
     final _result = create();
     if (database != null) {
@@ -231,23 +231,23 @@ class DeleteDocumentRequest extends $pb.GeneratedMessage {
   void clearCollection() => clearField(2);
 
   @$pb.TagNumber(3)
-  $1.ObjectId get documentId => $_getN(2);
+  $0.ObjectId get documentId => $_getN(2);
   @$pb.TagNumber(3)
-  set documentId($1.ObjectId v) { setField(3, v); }
+  set documentId($0.ObjectId v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDocumentId() => $_has(2);
   @$pb.TagNumber(3)
   void clearDocumentId() => clearField(3);
   @$pb.TagNumber(3)
-  $1.ObjectId ensureDocumentId() => $_ensure(2);
+  $0.ObjectId ensureDocumentId() => $_ensure(2);
 }
 
 class UpdateDocumentRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$1.ObjectId>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentId', subBuilder: $1.ObjectId.create)
-    ..aOM<$1.Value>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $1.Value.create)
+    ..aOM<$0.ObjectId>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentId', subBuilder: $0.ObjectId.create)
+    ..aOM<$0.Value>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $0.Value.create)
     ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'replace')
     ..hasRequiredFields = false
   ;
@@ -256,8 +256,8 @@ class UpdateDocumentRequest extends $pb.GeneratedMessage {
   factory UpdateDocumentRequest({
     $core.String? database,
     $core.String? collection,
-    $1.ObjectId? documentId,
-    $1.Value? document,
+    $0.ObjectId? documentId,
+    $0.Value? document,
     $core.bool? replace,
   }) {
     final _result = create();
@@ -318,26 +318,26 @@ class UpdateDocumentRequest extends $pb.GeneratedMessage {
   void clearCollection() => clearField(2);
 
   @$pb.TagNumber(3)
-  $1.ObjectId get documentId => $_getN(2);
+  $0.ObjectId get documentId => $_getN(2);
   @$pb.TagNumber(3)
-  set documentId($1.ObjectId v) { setField(3, v); }
+  set documentId($0.ObjectId v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDocumentId() => $_has(2);
   @$pb.TagNumber(3)
   void clearDocumentId() => clearField(3);
   @$pb.TagNumber(3)
-  $1.ObjectId ensureDocumentId() => $_ensure(2);
+  $0.ObjectId ensureDocumentId() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $1.Value get document => $_getN(3);
+  $0.Value get document => $_getN(3);
   @$pb.TagNumber(4)
-  set document($1.Value v) { setField(4, v); }
+  set document($0.Value v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasDocument() => $_has(3);
   @$pb.TagNumber(4)
   void clearDocument() => clearField(4);
   @$pb.TagNumber(4)
-  $1.Value ensureDocument() => $_ensure(3);
+  $0.Value ensureDocument() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $core.bool get replace => $_getBF(4);
@@ -353,7 +353,7 @@ class BulkInsertDocumentsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BulkInsertDocumentsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..pc<$1.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documents', $pb.PbFieldType.PM, subBuilder: $1.Value.create)
+    ..pc<$0.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documents', $pb.PbFieldType.PM, subBuilder: $0.Value.create)
     ..hasRequiredFields = false
   ;
 
@@ -361,7 +361,7 @@ class BulkInsertDocumentsRequest extends $pb.GeneratedMessage {
   factory BulkInsertDocumentsRequest({
     $core.String? database,
     $core.String? collection,
-    $core.Iterable<$1.Value>? documents,
+    $core.Iterable<$0.Value>? documents,
   }) {
     final _result = create();
     if (database != null) {
@@ -415,16 +415,16 @@ class BulkInsertDocumentsRequest extends $pb.GeneratedMessage {
   void clearCollection() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$1.Value> get documents => $_getList(2);
+  $core.List<$0.Value> get documents => $_getList(2);
 }
 
 class QueryDocumentsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryDocumentsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$1.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'query', subBuilder: $1.Value.create)
-    ..aOM<$1.Value>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', subBuilder: $1.Value.create)
-    ..aOM<$1.Value>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'projection', subBuilder: $1.Value.create)
+    ..aOM<$0.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'query', subBuilder: $0.Value.create)
+    ..aOM<$0.Value>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', subBuilder: $0.Value.create)
+    ..aOM<$0.Value>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'projection', subBuilder: $0.Value.create)
     ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'skip', $pb.PbFieldType.O3)
     ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'limit', $pb.PbFieldType.O3)
     ..hasRequiredFields = false
@@ -434,9 +434,9 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
   factory QueryDocumentsRequest({
     $core.String? database,
     $core.String? collection,
-    $1.Value? query,
-    $1.Value? sort,
-    $1.Value? projection,
+    $0.Value? query,
+    $0.Value? sort,
+    $0.Value? projection,
     $core.int? skip,
     $core.int? limit,
   }) {
@@ -504,37 +504,37 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
   void clearCollection() => clearField(2);
 
   @$pb.TagNumber(3)
-  $1.Value get query => $_getN(2);
+  $0.Value get query => $_getN(2);
   @$pb.TagNumber(3)
-  set query($1.Value v) { setField(3, v); }
+  set query($0.Value v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasQuery() => $_has(2);
   @$pb.TagNumber(3)
   void clearQuery() => clearField(3);
   @$pb.TagNumber(3)
-  $1.Value ensureQuery() => $_ensure(2);
+  $0.Value ensureQuery() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $1.Value get sort => $_getN(3);
+  $0.Value get sort => $_getN(3);
   @$pb.TagNumber(4)
-  set sort($1.Value v) { setField(4, v); }
+  set sort($0.Value v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSort() => $_has(3);
   @$pb.TagNumber(4)
   void clearSort() => clearField(4);
   @$pb.TagNumber(4)
-  $1.Value ensureSort() => $_ensure(3);
+  $0.Value ensureSort() => $_ensure(3);
 
   @$pb.TagNumber(5)
-  $1.Value get projection => $_getN(4);
+  $0.Value get projection => $_getN(4);
   @$pb.TagNumber(5)
-  set projection($1.Value v) { setField(5, v); }
+  set projection($0.Value v) { setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasProjection() => $_has(4);
   @$pb.TagNumber(5)
   void clearProjection() => clearField(5);
   @$pb.TagNumber(5)
-  $1.Value ensureProjection() => $_ensure(4);
+  $0.Value ensureProjection() => $_ensure(4);
 
   @$pb.TagNumber(6)
   $core.int get skip => $_getIZ(5);
@@ -559,8 +559,8 @@ class ListenRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListenRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..pc<$1.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pipeline', $pb.PbFieldType.PM, subBuilder: $1.Value.create)
-    ..aOM<$1.ChangeStreamOptions>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'options', subBuilder: $1.ChangeStreamOptions.create)
+    ..pc<$0.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pipeline', $pb.PbFieldType.PM, subBuilder: $0.Value.create)
+    ..aOM<$0.ChangeStreamOptions>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'options', subBuilder: $0.ChangeStreamOptions.create)
     ..hasRequiredFields = false
   ;
 
@@ -568,8 +568,8 @@ class ListenRequest extends $pb.GeneratedMessage {
   factory ListenRequest({
     $core.String? database,
     $core.String? collection,
-    $core.Iterable<$1.Value>? pipeline,
-    $1.ChangeStreamOptions? options,
+    $core.Iterable<$0.Value>? pipeline,
+    $0.ChangeStreamOptions? options,
   }) {
     final _result = create();
     if (database != null) {
@@ -626,29 +626,29 @@ class ListenRequest extends $pb.GeneratedMessage {
   void clearCollection() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$1.Value> get pipeline => $_getList(2);
+  $core.List<$0.Value> get pipeline => $_getList(2);
 
   @$pb.TagNumber(4)
-  $1.ChangeStreamOptions get options => $_getN(3);
+  $0.ChangeStreamOptions get options => $_getN(3);
   @$pb.TagNumber(4)
-  set options($1.ChangeStreamOptions v) { setField(4, v); }
+  set options($0.ChangeStreamOptions v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasOptions() => $_has(3);
   @$pb.TagNumber(4)
   void clearOptions() => clearField(4);
   @$pb.TagNumber(4)
-  $1.ChangeStreamOptions ensureOptions() => $_ensure(3);
+  $0.ChangeStreamOptions ensureOptions() => $_ensure(3);
 }
 
 class ListenResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListenResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
-    ..aOM<$1.Value>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changes', subBuilder: $1.Value.create)
+    ..aOM<$0.Value>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changes', subBuilder: $0.Value.create)
     ..hasRequiredFields = false
   ;
 
   ListenResponse._() : super();
   factory ListenResponse({
-    $1.Value? changes,
+    $0.Value? changes,
   }) {
     final _result = create();
     if (changes != null) {
@@ -678,14 +678,14 @@ class ListenResponse extends $pb.GeneratedMessage {
   static ListenResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.Value get changes => $_getN(0);
+  $0.Value get changes => $_getN(0);
   @$pb.TagNumber(1)
-  set changes($1.Value v) { setField(1, v); }
+  set changes($0.Value v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasChanges() => $_has(0);
   @$pb.TagNumber(1)
   void clearChanges() => clearField(1);
   @$pb.TagNumber(1)
-  $1.Value ensureChanges() => $_ensure(0);
+  $0.Value ensureChanges() => $_ensure(0);
 }
 
