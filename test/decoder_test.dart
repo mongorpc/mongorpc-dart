@@ -1,9 +1,9 @@
 // ignore_for_file: avoid_print
 
-import 'package:flutter_test/flutter_test.dart';
 import 'package:mongorpc/decoder.dart';
 import 'package:mongorpc/encoder.dart';
-import 'package:mongorpc/mongorpc/value.pb.dart';
+import 'package:test/expect.dart';
+import 'package:test/scaffolding.dart';
 
 void main() {
   test('deocde null', () {
