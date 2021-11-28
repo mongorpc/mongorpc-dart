@@ -12,12 +12,32 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import 'value.pb.dart' as $0;
 
 class GetDocumentRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$0.ObjectId>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentId', subBuilder: $0.ObjectId.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'GetDocumentRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'mongorpc'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'database')
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'collection')
+    ..aOM<$0.ObjectId>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'documentId',
+        subBuilder: $0.ObjectId.create)
+    ..hasRequiredFields = false;
 
   GetDocumentRequest._() : super();
   factory GetDocumentRequest({
@@ -37,31 +57,40 @@ class GetDocumentRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory GetDocumentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetDocumentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory GetDocumentRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory GetDocumentRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   GetDocumentRequest clone() => GetDocumentRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  GetDocumentRequest copyWith(void Function(GetDocumentRequest) updates) => super.copyWith((message) => updates(message as GetDocumentRequest)) as GetDocumentRequest; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  GetDocumentRequest copyWith(void Function(GetDocumentRequest) updates) =>
+      super.copyWith((message) => updates(message as GetDocumentRequest))
+          as GetDocumentRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetDocumentRequest create() => GetDocumentRequest._();
   GetDocumentRequest createEmptyInstance() => create();
-  static $pb.PbList<GetDocumentRequest> createRepeated() => $pb.PbList<GetDocumentRequest>();
+  static $pb.PbList<GetDocumentRequest> createRepeated() =>
+      $pb.PbList<GetDocumentRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetDocumentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetDocumentRequest>(create);
+  static GetDocumentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDocumentRequest>(create);
   static GetDocumentRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get database => $_getSZ(0);
   @$pb.TagNumber(1)
-  set database($core.String v) { $_setString(0, v); }
+  set database($core.String v) {
+    $_setString(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasDatabase() => $_has(0);
   @$pb.TagNumber(1)
@@ -70,7 +99,10 @@ class GetDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get collection => $_getSZ(1);
   @$pb.TagNumber(2)
-  set collection($core.String v) { $_setString(1, v); }
+  set collection($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasCollection() => $_has(1);
   @$pb.TagNumber(2)
@@ -79,7 +111,10 @@ class GetDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $0.ObjectId get documentId => $_getN(2);
   @$pb.TagNumber(3)
-  set documentId($0.ObjectId v) { setField(3, v); }
+  set documentId($0.ObjectId v) {
+    setField(3, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasDocumentId() => $_has(2);
   @$pb.TagNumber(3)
@@ -89,12 +124,32 @@ class GetDocumentRequest extends $pb.GeneratedMessage {
 }
 
 class InsertDocumentRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InsertDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$0.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $0.Value.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'InsertDocumentRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'mongorpc'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'database')
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'collection')
+    ..aOM<$0.Value>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'document',
+        subBuilder: $0.Value.create)
+    ..hasRequiredFields = false;
 
   InsertDocumentRequest._() : super();
   factory InsertDocumentRequest({
@@ -114,31 +169,42 @@ class InsertDocumentRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory InsertDocumentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory InsertDocumentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  InsertDocumentRequest clone() => InsertDocumentRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  InsertDocumentRequest copyWith(void Function(InsertDocumentRequest) updates) => super.copyWith((message) => updates(message as InsertDocumentRequest)) as InsertDocumentRequest; // ignore: deprecated_member_use
+  factory InsertDocumentRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory InsertDocumentRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  InsertDocumentRequest clone() =>
+      InsertDocumentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  InsertDocumentRequest copyWith(
+          void Function(InsertDocumentRequest) updates) =>
+      super.copyWith((message) => updates(message as InsertDocumentRequest))
+          as InsertDocumentRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static InsertDocumentRequest create() => InsertDocumentRequest._();
   InsertDocumentRequest createEmptyInstance() => create();
-  static $pb.PbList<InsertDocumentRequest> createRepeated() => $pb.PbList<InsertDocumentRequest>();
+  static $pb.PbList<InsertDocumentRequest> createRepeated() =>
+      $pb.PbList<InsertDocumentRequest>();
   @$core.pragma('dart2js:noInline')
-  static InsertDocumentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InsertDocumentRequest>(create);
+  static InsertDocumentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<InsertDocumentRequest>(create);
   static InsertDocumentRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get database => $_getSZ(0);
   @$pb.TagNumber(1)
-  set database($core.String v) { $_setString(0, v); }
+  set database($core.String v) {
+    $_setString(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasDatabase() => $_has(0);
   @$pb.TagNumber(1)
@@ -147,7 +213,10 @@ class InsertDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get collection => $_getSZ(1);
   @$pb.TagNumber(2)
-  set collection($core.String v) { $_setString(1, v); }
+  set collection($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasCollection() => $_has(1);
   @$pb.TagNumber(2)
@@ -156,7 +225,10 @@ class InsertDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $0.Value get document => $_getN(2);
   @$pb.TagNumber(3)
-  set document($0.Value v) { setField(3, v); }
+  set document($0.Value v) {
+    setField(3, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasDocument() => $_has(2);
   @$pb.TagNumber(3)
@@ -166,12 +238,32 @@ class InsertDocumentRequest extends $pb.GeneratedMessage {
 }
 
 class DeleteDocumentRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DeleteDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$0.ObjectId>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentId', subBuilder: $0.ObjectId.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'DeleteDocumentRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'mongorpc'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'database')
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'collection')
+    ..aOM<$0.ObjectId>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'documentId',
+        subBuilder: $0.ObjectId.create)
+    ..hasRequiredFields = false;
 
   DeleteDocumentRequest._() : super();
   factory DeleteDocumentRequest({
@@ -191,31 +283,42 @@ class DeleteDocumentRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory DeleteDocumentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteDocumentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  DeleteDocumentRequest clone() => DeleteDocumentRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  DeleteDocumentRequest copyWith(void Function(DeleteDocumentRequest) updates) => super.copyWith((message) => updates(message as DeleteDocumentRequest)) as DeleteDocumentRequest; // ignore: deprecated_member_use
+  factory DeleteDocumentRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory DeleteDocumentRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  DeleteDocumentRequest clone() =>
+      DeleteDocumentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  DeleteDocumentRequest copyWith(
+          void Function(DeleteDocumentRequest) updates) =>
+      super.copyWith((message) => updates(message as DeleteDocumentRequest))
+          as DeleteDocumentRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static DeleteDocumentRequest create() => DeleteDocumentRequest._();
   DeleteDocumentRequest createEmptyInstance() => create();
-  static $pb.PbList<DeleteDocumentRequest> createRepeated() => $pb.PbList<DeleteDocumentRequest>();
+  static $pb.PbList<DeleteDocumentRequest> createRepeated() =>
+      $pb.PbList<DeleteDocumentRequest>();
   @$core.pragma('dart2js:noInline')
-  static DeleteDocumentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeleteDocumentRequest>(create);
+  static DeleteDocumentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteDocumentRequest>(create);
   static DeleteDocumentRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get database => $_getSZ(0);
   @$pb.TagNumber(1)
-  set database($core.String v) { $_setString(0, v); }
+  set database($core.String v) {
+    $_setString(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasDatabase() => $_has(0);
   @$pb.TagNumber(1)
@@ -224,7 +327,10 @@ class DeleteDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get collection => $_getSZ(1);
   @$pb.TagNumber(2)
-  set collection($core.String v) { $_setString(1, v); }
+  set collection($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasCollection() => $_has(1);
   @$pb.TagNumber(2)
@@ -233,7 +339,10 @@ class DeleteDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $0.ObjectId get documentId => $_getN(2);
   @$pb.TagNumber(3)
-  set documentId($0.ObjectId v) { setField(3, v); }
+  set documentId($0.ObjectId v) {
+    setField(3, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasDocumentId() => $_has(2);
   @$pb.TagNumber(3)
@@ -243,14 +352,43 @@ class DeleteDocumentRequest extends $pb.GeneratedMessage {
 }
 
 class UpdateDocumentRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UpdateDocumentRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$0.ObjectId>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documentId', subBuilder: $0.ObjectId.create)
-    ..aOM<$0.Value>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'document', subBuilder: $0.Value.create)
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'replace')
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'UpdateDocumentRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'mongorpc'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'database')
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'collection')
+    ..aOM<$0.ObjectId>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'documentId',
+        subBuilder: $0.ObjectId.create)
+    ..aOM<$0.Value>(
+        4,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'document',
+        subBuilder: $0.Value.create)
+    ..aOB(
+        5,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'replace')
+    ..hasRequiredFields = false;
 
   UpdateDocumentRequest._() : super();
   factory UpdateDocumentRequest({
@@ -278,31 +416,42 @@ class UpdateDocumentRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory UpdateDocumentRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateDocumentRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  UpdateDocumentRequest clone() => UpdateDocumentRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  UpdateDocumentRequest copyWith(void Function(UpdateDocumentRequest) updates) => super.copyWith((message) => updates(message as UpdateDocumentRequest)) as UpdateDocumentRequest; // ignore: deprecated_member_use
+  factory UpdateDocumentRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory UpdateDocumentRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  UpdateDocumentRequest clone() =>
+      UpdateDocumentRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  UpdateDocumentRequest copyWith(
+          void Function(UpdateDocumentRequest) updates) =>
+      super.copyWith((message) => updates(message as UpdateDocumentRequest))
+          as UpdateDocumentRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static UpdateDocumentRequest create() => UpdateDocumentRequest._();
   UpdateDocumentRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateDocumentRequest> createRepeated() => $pb.PbList<UpdateDocumentRequest>();
+  static $pb.PbList<UpdateDocumentRequest> createRepeated() =>
+      $pb.PbList<UpdateDocumentRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateDocumentRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateDocumentRequest>(create);
+  static UpdateDocumentRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateDocumentRequest>(create);
   static UpdateDocumentRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get database => $_getSZ(0);
   @$pb.TagNumber(1)
-  set database($core.String v) { $_setString(0, v); }
+  set database($core.String v) {
+    $_setString(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasDatabase() => $_has(0);
   @$pb.TagNumber(1)
@@ -311,7 +460,10 @@ class UpdateDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get collection => $_getSZ(1);
   @$pb.TagNumber(2)
-  set collection($core.String v) { $_setString(1, v); }
+  set collection($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasCollection() => $_has(1);
   @$pb.TagNumber(2)
@@ -320,7 +472,10 @@ class UpdateDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $0.ObjectId get documentId => $_getN(2);
   @$pb.TagNumber(3)
-  set documentId($0.ObjectId v) { setField(3, v); }
+  set documentId($0.ObjectId v) {
+    setField(3, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasDocumentId() => $_has(2);
   @$pb.TagNumber(3)
@@ -331,7 +486,10 @@ class UpdateDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $0.Value get document => $_getN(3);
   @$pb.TagNumber(4)
-  set document($0.Value v) { setField(4, v); }
+  set document($0.Value v) {
+    setField(4, v);
+  }
+
   @$pb.TagNumber(4)
   $core.bool hasDocument() => $_has(3);
   @$pb.TagNumber(4)
@@ -342,7 +500,10 @@ class UpdateDocumentRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool get replace => $_getBF(4);
   @$pb.TagNumber(5)
-  set replace($core.bool v) { $_setBool(4, v); }
+  set replace($core.bool v) {
+    $_setBool(4, v);
+  }
+
   @$pb.TagNumber(5)
   $core.bool hasReplace() => $_has(4);
   @$pb.TagNumber(5)
@@ -350,12 +511,33 @@ class UpdateDocumentRequest extends $pb.GeneratedMessage {
 }
 
 class BulkInsertDocumentsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'BulkInsertDocumentsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..pc<$0.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'documents', $pb.PbFieldType.PM, subBuilder: $0.Value.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'BulkInsertDocumentsRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'mongorpc'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'database')
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'collection')
+    ..pc<$0.Value>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'documents',
+        $pb.PbFieldType.PM,
+        subBuilder: $0.Value.create)
+    ..hasRequiredFields = false;
 
   BulkInsertDocumentsRequest._() : super();
   factory BulkInsertDocumentsRequest({
@@ -375,31 +557,43 @@ class BulkInsertDocumentsRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory BulkInsertDocumentsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory BulkInsertDocumentsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  BulkInsertDocumentsRequest clone() => BulkInsertDocumentsRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  BulkInsertDocumentsRequest copyWith(void Function(BulkInsertDocumentsRequest) updates) => super.copyWith((message) => updates(message as BulkInsertDocumentsRequest)) as BulkInsertDocumentsRequest; // ignore: deprecated_member_use
+  factory BulkInsertDocumentsRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory BulkInsertDocumentsRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  BulkInsertDocumentsRequest clone() =>
+      BulkInsertDocumentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  BulkInsertDocumentsRequest copyWith(
+          void Function(BulkInsertDocumentsRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as BulkInsertDocumentsRequest))
+          as BulkInsertDocumentsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static BulkInsertDocumentsRequest create() => BulkInsertDocumentsRequest._();
   BulkInsertDocumentsRequest createEmptyInstance() => create();
-  static $pb.PbList<BulkInsertDocumentsRequest> createRepeated() => $pb.PbList<BulkInsertDocumentsRequest>();
+  static $pb.PbList<BulkInsertDocumentsRequest> createRepeated() =>
+      $pb.PbList<BulkInsertDocumentsRequest>();
   @$core.pragma('dart2js:noInline')
-  static BulkInsertDocumentsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BulkInsertDocumentsRequest>(create);
+  static BulkInsertDocumentsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<BulkInsertDocumentsRequest>(create);
   static BulkInsertDocumentsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get database => $_getSZ(0);
   @$pb.TagNumber(1)
-  set database($core.String v) { $_setString(0, v); }
+  set database($core.String v) {
+    $_setString(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasDatabase() => $_has(0);
   @$pb.TagNumber(1)
@@ -408,7 +602,10 @@ class BulkInsertDocumentsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get collection => $_getSZ(1);
   @$pb.TagNumber(2)
-  set collection($core.String v) { $_setString(1, v); }
+  set collection($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasCollection() => $_has(1);
   @$pb.TagNumber(2)
@@ -419,16 +616,56 @@ class BulkInsertDocumentsRequest extends $pb.GeneratedMessage {
 }
 
 class QueryDocumentsRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryDocumentsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..aOM<$0.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'query', subBuilder: $0.Value.create)
-    ..aOM<$0.Value>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sort', subBuilder: $0.Value.create)
-    ..aOM<$0.Value>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'projection', subBuilder: $0.Value.create)
-    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'skip', $pb.PbFieldType.O3)
-    ..a<$core.int>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'limit', $pb.PbFieldType.O3)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'QueryDocumentsRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'mongorpc'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'database')
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'collection')
+    ..aOM<$0.Value>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'query',
+        subBuilder: $0.Value.create)
+    ..aOM<$0.Value>(
+        4,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'sort',
+        subBuilder: $0.Value.create)
+    ..aOM<$0.Value>(
+        5,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'projection',
+        subBuilder: $0.Value.create)
+    ..a<$core.int>(
+        6,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'skip',
+        $pb.PbFieldType.O3)
+    ..a<$core.int>(
+        7,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'limit',
+        $pb.PbFieldType.O3)
+    ..hasRequiredFields = false;
 
   QueryDocumentsRequest._() : super();
   factory QueryDocumentsRequest({
@@ -464,31 +701,42 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory QueryDocumentsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory QueryDocumentsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  QueryDocumentsRequest clone() => QueryDocumentsRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  QueryDocumentsRequest copyWith(void Function(QueryDocumentsRequest) updates) => super.copyWith((message) => updates(message as QueryDocumentsRequest)) as QueryDocumentsRequest; // ignore: deprecated_member_use
+  factory QueryDocumentsRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory QueryDocumentsRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
+  QueryDocumentsRequest clone() =>
+      QueryDocumentsRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  QueryDocumentsRequest copyWith(
+          void Function(QueryDocumentsRequest) updates) =>
+      super.copyWith((message) => updates(message as QueryDocumentsRequest))
+          as QueryDocumentsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryDocumentsRequest create() => QueryDocumentsRequest._();
   QueryDocumentsRequest createEmptyInstance() => create();
-  static $pb.PbList<QueryDocumentsRequest> createRepeated() => $pb.PbList<QueryDocumentsRequest>();
+  static $pb.PbList<QueryDocumentsRequest> createRepeated() =>
+      $pb.PbList<QueryDocumentsRequest>();
   @$core.pragma('dart2js:noInline')
-  static QueryDocumentsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryDocumentsRequest>(create);
+  static QueryDocumentsRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<QueryDocumentsRequest>(create);
   static QueryDocumentsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get database => $_getSZ(0);
   @$pb.TagNumber(1)
-  set database($core.String v) { $_setString(0, v); }
+  set database($core.String v) {
+    $_setString(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasDatabase() => $_has(0);
   @$pb.TagNumber(1)
@@ -497,7 +745,10 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get collection => $_getSZ(1);
   @$pb.TagNumber(2)
-  set collection($core.String v) { $_setString(1, v); }
+  set collection($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasCollection() => $_has(1);
   @$pb.TagNumber(2)
@@ -506,7 +757,10 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $0.Value get query => $_getN(2);
   @$pb.TagNumber(3)
-  set query($0.Value v) { setField(3, v); }
+  set query($0.Value v) {
+    setField(3, v);
+  }
+
   @$pb.TagNumber(3)
   $core.bool hasQuery() => $_has(2);
   @$pb.TagNumber(3)
@@ -517,7 +771,10 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $0.Value get sort => $_getN(3);
   @$pb.TagNumber(4)
-  set sort($0.Value v) { setField(4, v); }
+  set sort($0.Value v) {
+    setField(4, v);
+  }
+
   @$pb.TagNumber(4)
   $core.bool hasSort() => $_has(3);
   @$pb.TagNumber(4)
@@ -528,7 +785,10 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $0.Value get projection => $_getN(4);
   @$pb.TagNumber(5)
-  set projection($0.Value v) { setField(5, v); }
+  set projection($0.Value v) {
+    setField(5, v);
+  }
+
   @$pb.TagNumber(5)
   $core.bool hasProjection() => $_has(4);
   @$pb.TagNumber(5)
@@ -539,7 +799,10 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.int get skip => $_getIZ(5);
   @$pb.TagNumber(6)
-  set skip($core.int v) { $_setSignedInt32(5, v); }
+  set skip($core.int v) {
+    $_setSignedInt32(5, v);
+  }
+
   @$pb.TagNumber(6)
   $core.bool hasSkip() => $_has(5);
   @$pb.TagNumber(6)
@@ -548,7 +811,10 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.int get limit => $_getIZ(6);
   @$pb.TagNumber(7)
-  set limit($core.int v) { $_setSignedInt32(6, v); }
+  set limit($core.int v) {
+    $_setSignedInt32(6, v);
+  }
+
   @$pb.TagNumber(7)
   $core.bool hasLimit() => $_has(6);
   @$pb.TagNumber(7)
@@ -556,13 +822,39 @@ class QueryDocumentsRequest extends $pb.GeneratedMessage {
 }
 
 class ListenRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListenRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'database')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'collection')
-    ..pc<$0.Value>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pipeline', $pb.PbFieldType.PM, subBuilder: $0.Value.create)
-    ..aOM<$0.ChangeStreamOptions>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'options', subBuilder: $0.ChangeStreamOptions.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'ListenRequest',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'mongorpc'),
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'database')
+    ..aOS(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'collection')
+    ..pc<$0.Value>(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'pipeline',
+        $pb.PbFieldType.PM,
+        subBuilder: $0.Value.create)
+    ..aOM<$0.ChangeStreamOptions>(
+        4,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'options',
+        subBuilder: $0.ChangeStreamOptions.create)
+    ..hasRequiredFields = false;
 
   ListenRequest._() : super();
   factory ListenRequest({
@@ -586,31 +878,40 @@ class ListenRequest extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ListenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory ListenRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ListenRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   ListenRequest clone() => ListenRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListenRequest copyWith(void Function(ListenRequest) updates) => super.copyWith((message) => updates(message as ListenRequest)) as ListenRequest; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ListenRequest copyWith(void Function(ListenRequest) updates) =>
+      super.copyWith((message) => updates(message as ListenRequest))
+          as ListenRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ListenRequest create() => ListenRequest._();
   ListenRequest createEmptyInstance() => create();
-  static $pb.PbList<ListenRequest> createRepeated() => $pb.PbList<ListenRequest>();
+  static $pb.PbList<ListenRequest> createRepeated() =>
+      $pb.PbList<ListenRequest>();
   @$core.pragma('dart2js:noInline')
-  static ListenRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListenRequest>(create);
+  static ListenRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListenRequest>(create);
   static ListenRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get database => $_getSZ(0);
   @$pb.TagNumber(1)
-  set database($core.String v) { $_setString(0, v); }
+  set database($core.String v) {
+    $_setString(0, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasDatabase() => $_has(0);
   @$pb.TagNumber(1)
@@ -619,7 +920,10 @@ class ListenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get collection => $_getSZ(1);
   @$pb.TagNumber(2)
-  set collection($core.String v) { $_setString(1, v); }
+  set collection($core.String v) {
+    $_setString(1, v);
+  }
+
   @$pb.TagNumber(2)
   $core.bool hasCollection() => $_has(1);
   @$pb.TagNumber(2)
@@ -631,7 +935,10 @@ class ListenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $0.ChangeStreamOptions get options => $_getN(3);
   @$pb.TagNumber(4)
-  set options($0.ChangeStreamOptions v) { setField(4, v); }
+  set options($0.ChangeStreamOptions v) {
+    setField(4, v);
+  }
+
   @$pb.TagNumber(4)
   $core.bool hasOptions() => $_has(3);
   @$pb.TagNumber(4)
@@ -641,10 +948,22 @@ class ListenRequest extends $pb.GeneratedMessage {
 }
 
 class ListenResponse extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ListenResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'mongorpc'), createEmptyInstance: create)
-    ..aOM<$0.Value>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'changes', subBuilder: $0.Value.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'ListenResponse',
+      package: const $pb.PackageName(
+          const $core.bool.fromEnvironment('protobuf.omit_message_names')
+              ? ''
+              : 'mongorpc'),
+      createEmptyInstance: create)
+    ..aOM<$0.Value>(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'changes',
+        subBuilder: $0.Value.create)
+    ..hasRequiredFields = false;
 
   ListenResponse._() : super();
   factory ListenResponse({
@@ -656,31 +975,40 @@ class ListenResponse extends $pb.GeneratedMessage {
     }
     return _result;
   }
-  factory ListenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  factory ListenResponse.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory ListenResponse.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   ListenResponse clone() => ListenResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListenResponse copyWith(void Function(ListenResponse) updates) => super.copyWith((message) => updates(message as ListenResponse)) as ListenResponse; // ignore: deprecated_member_use
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
+  ListenResponse copyWith(void Function(ListenResponse) updates) =>
+      super.copyWith((message) => updates(message as ListenResponse))
+          as ListenResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ListenResponse create() => ListenResponse._();
   ListenResponse createEmptyInstance() => create();
-  static $pb.PbList<ListenResponse> createRepeated() => $pb.PbList<ListenResponse>();
+  static $pb.PbList<ListenResponse> createRepeated() =>
+      $pb.PbList<ListenResponse>();
   @$core.pragma('dart2js:noInline')
-  static ListenResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListenResponse>(create);
+  static ListenResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ListenResponse>(create);
   static ListenResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.Value get changes => $_getN(0);
   @$pb.TagNumber(1)
-  set changes($0.Value v) { setField(1, v); }
+  set changes($0.Value v) {
+    setField(1, v);
+  }
+
   @$pb.TagNumber(1)
   $core.bool hasChanges() => $_has(0);
   @$pb.TagNumber(1)
@@ -688,4 +1016,3 @@ class ListenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $0.Value ensureChanges() => $_ensure(0);
 }
-

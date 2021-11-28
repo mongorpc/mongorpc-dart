@@ -10,17 +10,25 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class IndexDirection extends $pb.ProtobufEnum {
-  static const IndexDirection ASCENDING = IndexDirection._(0, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'ASCENDING');
-  static const IndexDirection DESCENDING = IndexDirection._(1, const $core.bool.fromEnvironment('protobuf.omit_enum_names') ? '' : 'DESCENDING');
+  static const IndexDirection ASCENDING = IndexDirection._(
+      0,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'ASCENDING');
+  static const IndexDirection DESCENDING = IndexDirection._(
+      1,
+      const $core.bool.fromEnvironment('protobuf.omit_enum_names')
+          ? ''
+          : 'DESCENDING');
 
-  static const $core.List<IndexDirection> values = <IndexDirection> [
+  static const $core.List<IndexDirection> values = <IndexDirection>[
     ASCENDING,
     DESCENDING,
   ];
 
-  static final $core.Map<$core.int, IndexDirection> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static final $core.Map<$core.int, IndexDirection> _byValue =
+      $pb.ProtobufEnum.initByValue(values);
   static IndexDirection? valueOf($core.int value) => _byValue[value];
 
   const IndexDirection._($core.int v, $core.String n) : super(v, n);
 }
-
