@@ -17,5 +17,15 @@ Future<void> main(List<String> args) async {
   print(documents);
 
   await client.disconnect();
+
+  var stream = collection.documents().listen();
+  try {
+    await for (var document in stream) {
+      print(document);
+    }
+  } catch (e) {
+    print(e);
+  }
+
   return;
 }

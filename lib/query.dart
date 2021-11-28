@@ -1,5 +1,8 @@
 library mongorpc;
 
+import 'dart:async';
+
+import 'package:grpc/grpc.dart';
 import 'package:mongorpc/collection.dart';
 import 'package:mongorpc/database.dart';
 import 'package:mongorpc/decoder.dart';
@@ -129,5 +132,23 @@ class QueryBuilder {
 
     var response = await client.queryDocuments(request);
     return decode(response);
+  }
+
+  Stream<dynamic> listen() {
+    var request = ListenRequest()
+      ..database = database.name
+      ..collection = collection.name;
+
+    var response = client.listen(request);
+
+    StreamTransformer<ListenResponse, dynamic> transformer =
+        StreamTransformer.fromHandlers(
+      handleData: (response, sink) {
+        print(response);
+        sink.add(decode(response.changes));
+      },
+    );
+
+    return response.transform(transformer);
   }
 }
