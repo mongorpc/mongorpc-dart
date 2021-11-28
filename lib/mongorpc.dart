@@ -1,7 +1,5 @@
 library mongorpc;
 
-import 'dart:ffi';
-
 import 'package:grpc/grpc_connection_interface.dart';
 import 'package:mongorpc/database.dart';
 import 'package:mongorpc/mongorpc/mongorpc.pbgrpc.dart';
