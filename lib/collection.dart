@@ -4,6 +4,7 @@ import 'package:mongorpc/database.dart';
 import 'package:mongorpc/document.dart';
 import 'package:mongorpc/encoder.dart';
 import 'package:mongorpc/mongorpc/mongorpc.pbgrpc.dart';
+import 'package:mongorpc/query.dart';
 
 class Collection {
   String name;
@@ -13,6 +14,10 @@ class Collection {
 
   Document document(String id) {
     return Document(client, this, id);
+  }
+
+  QueryBuilder documents() {
+    return QueryBuilder(client, database, this);
   }
 
   Future<dynamic> insert(dynamic data) async {
