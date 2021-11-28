@@ -5,12 +5,18 @@ mongorpc client for flutter
 import 'package:mongorpc/mongorpc.dart';
 
 Future<void> main(List<String> args) async {
-  var client = await mongorpc("http://localhost:1203");
+  var options = ChannelOptions(credentials: ChannelCredentials.insecure());
+  var client = await mongorpc("localhost", port: 1203, options: options);
 
   var database = client.database("sample_mflix");
   var collection = database.collection("movies");
 
-  var documents = await collection.documents().limit(10).get();
+  var documents = await collection
+      .documents()
+      .limit(10)
+      .sort(by: "title")
+      .where("title", isEqualTo: "Blacksmith Scene")
+      .get();
   print(documents);
 }
 ```
