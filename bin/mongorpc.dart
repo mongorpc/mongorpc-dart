@@ -10,8 +10,8 @@ Future<void> main(List<String> args) async {
 
   var documents = await collection
       .documents()
-      // .limit(10)
-      // .sort(by: "title")
+      .limit(10)
+      .sort(by: "title")
       .where("title", isEqualTo: "Blacksmith Scene")
       .get();
   print(documents);
