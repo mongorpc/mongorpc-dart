@@ -144,6 +144,18 @@ class Collection {
       );
   }
 
+  Future<int> countDocuments(Map<String, dynamic> filter) async {
+    final response = await client.client.countDocuments(
+      CountDocumentsRequest(
+        database: database,
+        collection: name,
+        filter: toProtoFilter(filter),
+      ),
+      options: client.options,
+    );
+    return response.count.toInt();
+  }
+
   Future<List<Map<String, dynamic>>> aggregate(List<Map<String, dynamic>> pipeline) async {
     final stages = pipeline.map((stage) {
       final mapValue = pb.MapValue();
@@ -171,5 +183,80 @@ class Collection {
       }
     }
     return results;
+  }
+
+  Stream<Map<String, dynamic>> watch({
+    List<Map<String, dynamic>>? pipeline,
+    int? batchSize,
+    String? fullDocument,
+  }) async* {
+    final req = WatchRequest(
+      database: database,
+      collection: name,
+    );
+
+    if (pipeline != null) {
+      req.pipeline.addAll(pipeline.map((stage) {
+        final mapValue = pb.MapValue();
+        mapValue.fields.addAll(
+          stage.map((k, v) => MapEntry(k, toProtoValue(v))),
+        );
+        return agg.PipelineStage(raw: mapValue);
+      }));
+    }
+
+    if (batchSize != null || fullDocument != null) {
+      req.options = ChangeStreamOptions();
+      if (batchSize != null) req.options.batchSize = batchSize;
+      if (fullDocument != null) {
+        switch (fullDocument) {
+          case 'updateLookup':
+            req.options.fullDocument = FullDocument.UPDATE_LOOKUP;
+            break;
+          case 'whenAvailable':
+            req.options.fullDocument = FullDocument.WHEN_AVAILABLE;
+            break;
+          case 'required':
+            req.options.fullDocument = FullDocument.REQUIRED;
+            break;
+          default:
+            req.options.fullDocument = FullDocument.FULL_DOCUMENT_UNSPECIFIED;
+        }
+      }
+    }
+
+    final stream = client.client.watch(req, options: client.options);
+
+    await for (final resp in stream) {
+      if (resp.hasEvent()) {
+        final event = <String, dynamic>{
+          'operationType': _opTypeToString(resp.event.operationType),
+        };
+        if (resp.event.hasDocumentKey()) {
+            event['documentKey'] = {'_id': resp.event.documentKey.hex};
+            event['_id'] = {'_id': resp.event.documentKey.hex}; // Approximate
+        }
+        if (resp.event.hasFullDocument()) {
+            event['fullDocument'] = fromProtoDocument(resp.event.fullDocument);
+        }
+        event['ns'] = {'db': resp.event.database, 'coll': resp.event.collection};
+        
+        yield event;
+      }
+    }
+  }
+
+  String _opTypeToString(ChangeEventType type) {
+      switch (type) {
+          case ChangeEventType.INSERT: return 'insert';
+          case ChangeEventType.UPDATE: return 'update';
+          case ChangeEventType.REPLACE: return 'replace';
+          case ChangeEventType.DELETE: return 'delete';
+          case ChangeEventType.DROP: return 'drop';
+          case ChangeEventType.RENAME: return 'rename';
+          case ChangeEventType.DROP_DATABASE: return 'dropDatabase';
+          case ChangeEventType.INVALIDATE: return 'invalidate';
+          default: return 'unknown';
+      }
   }
 }

@@ -54,6 +54,8 @@ dynamic fromProtoValue(pb.Value value) {
     return value.arrayValue.values.map((v) => fromProtoValue(v)).toList();
   } else if (value.hasMapValue()) {
     return Map.fromEntries(value.mapValue.fields.entries.map((e) => MapEntry(e.key, fromProtoValue(e.value))));
+  } else if (value.hasObjectIdValue()) {
+    return value.objectIdValue.hex;
   } else {
     return null;
   }
@@ -104,7 +106,28 @@ pb.UpdateSpec toProtoUpdate(Map<String, dynamic> update) {
             ops.set[k] = toProtoValue(v);
         });
     }
-    // TODO: Add support for other operators like $unset, $inc etc.
+
+    if (update.containsKey('\$unset')) {
+        final unsetMap = update['\$unset'];
+        if (unsetMap is Map<String, dynamic>) {
+            // $unset: { field: "" }
+            unsetMap.forEach((k, v) {
+                ops.unset.add(k);
+            });
+        } else if (unsetMap is List) {
+             // specific fallback if needed, but standard is map
+             for (var k in unsetMap) {
+                 ops.unset.add(k.toString());
+             }
+        }
+    }
+
+    if (update.containsKey('\$inc')) {
+        final incMap = update['\$inc'] as Map<String, dynamic>;
+        incMap.forEach((k, v) {
+            ops.inc[k] = toProtoValue(v);
+        });
+    }
 
     return pb.UpdateSpec(operators: ops);
 }
