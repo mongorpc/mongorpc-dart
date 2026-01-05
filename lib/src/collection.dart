@@ -363,3 +363,110 @@ class DocumentSnapshot {
   @override
   String toString() => 'DocumentSnapshot(id: $id, exists: $exists)';
 }
+
+/// Represents the current state of a query result.
+class QuerySnapshot {
+  /// Documents currently matching the query.
+  final List<Map<String, dynamic>> documents;
+  
+  /// Number of documents in the result.
+  int get count => documents.length;
+
+  QuerySnapshot({required this.documents});
+
+  @override
+  String toString() => 'QuerySnapshot(count: $count)';
+}
+
+extension QuerySnapshotExtension on Collection {
+  /// Streams real-time updates for a filtered query.
+  /// 
+  /// First emits the initial matching documents, then emits updates
+  /// whenever documents enter or leave the result set.
+  /// 
+  /// Note: Uses broad watch with client-side filtering for accuracy.
+  /// 
+  /// Example:
+  /// ```dart
+  /// final stream = collection.onQuerySnapshot({'status': 'active'});
+  /// await for (final snapshot in stream) {
+  ///   print('Count: ${snapshot.count}');
+  ///   for (final doc in snapshot.documents) {
+  ///     print(doc);
+  ///   }
+  /// }
+  /// ```
+  Stream<QuerySnapshot> onQuerySnapshot(Map<String, dynamic> filter) async* {
+    // Local state: map of ID -> Document
+    final state = <String, Map<String, dynamic>>{};
+
+    // Fetch initial documents
+    final initialDocs = await find(filter);
+    for (final doc in initialDocs) {
+      final id = doc['_id'] as String?;
+      if (id != null) {
+        state[id] = doc;
+      }
+    }
+
+    // Emit initial state
+    yield QuerySnapshot(documents: state.values.toList());
+
+    // Watch entire collection (broad watch)
+    await for (final event in watch()) {
+      final opType = event['operationType'] as String?;
+      final fullDoc = event['fullDocument'] as Map<String, dynamic>?;
+      final docKey = event['documentKey'] as Map<String, dynamic>?;
+      
+      String? docId;
+      if (fullDoc != null) {
+        docId = fullDoc['_id'] as String?;
+      } else if (docKey != null) {
+        docId = docKey['_id'] as String?;
+      }
+      
+      if (docId == null) continue;
+
+      bool stateChanged = false;
+
+      switch (opType) {
+        case 'insert':
+        case 'update':
+        case 'replace':
+          if (fullDoc != null && _matchesFilter(fullDoc, filter)) {
+            state[docId] = fullDoc;
+            stateChanged = true;
+          } else if (state.containsKey(docId)) {
+            state.remove(docId);
+            stateChanged = true;
+          }
+          break;
+        case 'delete':
+          if (state.containsKey(docId)) {
+            state.remove(docId);
+            stateChanged = true;
+          }
+          break;
+        case 'invalidate':
+          state.clear();
+          stateChanged = true;
+          break;
+      }
+
+      if (stateChanged) {
+        yield QuerySnapshot(documents: state.values.toList());
+      }
+    }
+  }
+
+  /// Simple filter matching for top-level field equality.
+  bool _matchesFilter(Map<String, dynamic> doc, Map<String, dynamic> filter) {
+    if (filter.isEmpty) return true;
+    
+    for (final entry in filter.entries) {
+      if (!doc.containsKey(entry.key)) return false;
+      if (doc[entry.key].toString() != entry.value.toString()) return false;
+    }
+    return true;
+  }
+}
