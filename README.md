@@ -1,39 +1,51 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# mongorpc_dart
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
+Dart client for MongoRPC - a gRPC proxy for MongoDB.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
+## Installation
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Add dependencies to your `pubspec.yaml`:
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  mongorpc_dart:
+    git: https://github.com/mongorpc/mongorpc-dart.git
 ```
 
-## Additional information
+## Quick Start
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+import 'package:mongorpc_dart/mongorpc_dart.dart';
+
+void main() async {
+  // Connect
+  final client = MongoRPC('localhost', 50051);
+
+  final users = client.database('mydb').collection('users');
+
+  // Insert
+  final id = await users.insertOne({
+    'name': 'Alice',
+    'age': 30,
+  });
+
+  // Find by ID
+  final doc = await users.findById(id);
+  print(doc);
+
+  // Find with filter
+  final results = await users.find({
+    'age': {'$gte': 21},
+  });
+
+  // Update
+  await users.updateById(id, {
+    '\$set': {'verified': true},
+  });
+
+  // Delete
+  await users.deleteById(id);
+
+  await client.close();
+}
+```

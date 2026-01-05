@@ -1,7 +1,7 @@
 import 'package:mongorpc_dart/src/client.dart';
 import 'package:mongorpc_dart/src/gen/mongorpc/v1/mongorpc.pbgrpc.dart';
 import 'package:mongorpc_dart/src/gen/mongorpc/v1/value.pb.dart' as pb;
-// import 'package:mongorpc_dart/src/gen/mongorpc/v1/document.pb.dart' as pb; // unused
+import 'package:mongorpc_dart/src/gen/mongorpc/v1/aggregation.pb.dart' as agg;
 import 'package:mongorpc_dart/src/utils.dart';
 
 class Collection {
@@ -142,5 +142,34 @@ class Collection {
           ),
           options: client.options,
       );
+  }
+
+  Future<List<Map<String, dynamic>>> aggregate(List<Map<String, dynamic>> pipeline) async {
+    final stages = pipeline.map((stage) {
+      final mapValue = pb.MapValue();
+      mapValue.fields.addAll(
+        stage.map((k, v) => MapEntry(k, toProtoValue(v))),
+      );
+      return agg.PipelineStage(raw: mapValue);
+    }).toList();
+
+    final responseStream = client.client.aggregate(
+      AggregateRequest(
+        pipeline: agg.AggregationPipeline(
+          database: database,
+          collection: name,
+          stages: stages,
+        ),
+      ),
+      options: client.options,
+    );
+
+    final results = <Map<String, dynamic>>[];
+    await for (final resp in responseStream) {
+      if (resp.hasDocument()) {
+        results.add(fromProtoDocument(resp.document));
+      }
+    }
+    return results;
   }
 }
