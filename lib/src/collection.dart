@@ -259,4 +259,107 @@ class Collection {
           default: return 'unknown';
       }
   }
+
+  /// Streams real-time updates for a specific document.
+  /// 
+  /// First emits the current state of the document, then emits updates
+  /// whenever the document is modified, replaced, or deleted.
+  /// 
+  /// Example:
+  /// ```dart
+  /// final stream = collection.onSnapshot('docId');
+  /// await for (final snapshot in stream) {
+  ///   if (snapshot.exists) {
+  ///     print('Document: ${snapshot.data}');
+  ///   } else {
+  ///     print('Document does not exist');
+  ///   }
+  /// }
+  /// ```
+  Stream<DocumentSnapshot> onSnapshot(String docId) async* {
+    // Validate docId (24 character hex string)
+    if (docId.length != 24 || !RegExp(r'^[a-fA-F0-9]+$').hasMatch(docId)) {
+      throw ArgumentError('Invalid document ID: must be 24 character hex string');
+    }
+
+    // Fetch initial state
+    Map<String, dynamic>? initialDoc;
+    try {
+      initialDoc = await findById(docId);
+    } catch (e) {
+      // Document not found or error
+      initialDoc = null;
+    }
+
+    // Emit initial state
+    yield DocumentSnapshot(
+      id: docId,
+      data: initialDoc,
+      exists: initialDoc != null,
+    );
+
+    // Start watching with document ID filter
+    final pipeline = <Map<String, dynamic>>[
+      {
+        r'$match': {
+          'documentKey._id': {r'$oid': docId},
+        },
+      },
+    ];
+
+    await for (final event in watch(pipeline: pipeline)) {
+      final opType = event['operationType'] as String?;
+      
+      switch (opType) {
+        case 'insert':
+        case 'update':
+        case 'replace':
+          final fullDoc = event['fullDocument'] as Map<String, dynamic>?;
+          yield DocumentSnapshot(
+            id: docId,
+            data: fullDoc,
+            exists: fullDoc != null,
+          );
+          break;
+        case 'delete':
+          yield DocumentSnapshot(
+            id: docId,
+            data: null,
+            exists: false,
+          );
+          break;
+        case 'invalidate':
+          yield DocumentSnapshot(
+            id: docId,
+            data: null,
+            exists: false,
+          );
+          return; // Stream ends on invalidate
+        default:
+          // Ignore unknown event types
+          break;
+      }
+    }
+  }
+}
+
+/// Represents the current state of a document.
+class DocumentSnapshot {
+  /// The document's unique identifier.
+  final String id;
+  
+  /// The document's data. Null if the document doesn't exist.
+  final Map<String, dynamic>? data;
+  
+  /// Whether the document exists.
+  final bool exists;
+
+  DocumentSnapshot({
+    required this.id,
+    required this.data,
+    required this.exists,
+  });
+
+  @override
+  String toString() => 'DocumentSnapshot(id: $id, exists: $exists)';
 }
